@@ -1,4 +1,4 @@
-class TranslinkCard extends HTMLElement {
+class TisseoCard extends HTMLElement {
     set hass(hass) {
         if (!this.content) {
         const card = document.createElement('ha-card');
@@ -59,20 +59,25 @@ class TranslinkCard extends HTMLElement {
             //console.log(item, index);
             if(hass.states[item["entity"]]){
                 if(hass.states[item["entity"]].attributes){
-                    if(hass.states[item["entity"]].attributes.next_bus_countdown){
                         tmpcontent = tmpcontent + `
-                            <div class="bus_times_header">
-                                <div class="bus_times_header_route">Route ${hass.states[item["entity"]].attributes.route_number}</div>
-                                <div class="bus_times_header_countdown">next in ${hass.states[item["entity"]].attributes.next_bus_countdown} min</div>
-                            </div>
-                            <div class="bus_times">
-                                <div class="bus_time_icon"><ha-icon icon="mdi:bus"></ha-icon></div>
-                                <div class="bus_time">${hass.states[item["entity"]].attributes.buses_1}</div>
-                                <div class="bus_time">${hass.states[item["entity"]].attributes.buses_1}</div>
-                                <div class="bus_time">${hass.states[item["entity"]].attributes.buses_1}</div>
-                            </div>
+                        <div class="bus_times_header">
+                            <div class="bus_times_header_route">Route ${hass.states[item["entity"]].attributes.bus_0}</div>
+                        </div>
+                        <div class="bus_times">
+                            <div class="bus_time_icon"><ha-icon icon="mdi:bus"></ha-icon></div>
+                            <div class="bus_time">${hass.states[item["entity"]].attributes.bus_0next1}</div>
+                            <div class="bus_time">${hass.states[item["entity"]].attributes.bus_0next2}</div>
+                        </div>
+
+                        <div class="bus_times_header">
+                            <div class="bus_times_header_route">Route ${hass.states[item["entity"]].attributes.bus_1}</div>
+                        </div>
+                        <div class="bus_times">
+                            <div class="bus_time_icon"><ha-icon icon="mdi:bus"></ha-icon></div>
+                            <div class="bus_time">${hass.states[item["entity"]].attributes.bus_1next1}</div>
+                            <div class="bus_time">${hass.states[item["entity"]].attributes.bus_1next2}</div>
+                        </div>
                         `;
-                    }
                 }
             }
 
