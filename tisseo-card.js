@@ -105,4 +105,4 @@ class TisseoCard extends HTMLElement {
 
 }
   
-customElements.define('translink-card', TranslinkCard);
+customElements.define('tisseo-card', TisseoCard);
