@@ -32,8 +32,8 @@ class TisseoCard extends HTMLElement {
                 margin-bottom: 7px;
             }
             .bus_times_header_route{
-                grid-column: span 3;
-                text-align: center;
+                grid-column: span 1;
+                text-align: left;
             }
             .bus_times_header_countdown{
                 grid-column: span 9;
@@ -61,7 +61,7 @@ class TisseoCard extends HTMLElement {
                 if(hass.states[item["entity"]].attributes){
                         tmpcontent = tmpcontent + `
                         <div class="bus_times_header">
-                            <div class="bus_times_header_route">Route ${hass.states[item["entity"]].attributes.bus_0}</div>
+                            <div class="bus_times_header_route">${hass.states[item["entity"]].attributes.bus_0}</div>
                         </div>
                         <div class="bus_times">
                             <div class="bus_time_icon"><ha-icon icon="mdi:bus"></ha-icon></div>
